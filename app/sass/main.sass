@@ -1,0 +1,107 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	margin: 0
+	padding: 0
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+%logo-base
+	font-size: 30px
+	font-weight: bold
+	font-family: $exo2-font
+	color: $light
+
+.logo
+	@extend %logo-base
+	
+	&-accent
+		@extend %logo-base
+		color: $accent
+
+header
+	background-image: url("../img/roberto-nickson-183151.jpg")
+	background-size: cover
+	background-position: center
+	height: 100vh
+	color: $light
+	padding: 
+		top: 50px	
+	// &::after
+	// 	content: " "
+	// 	z-index: 10
+	// 	display: block
+	// 	position: absolute
+	// 	height: 100%
+	// 	top: 0
+	// 	left: 0
+	// 	right: 0
+	// 	background: rgba(0, 0, 0, 0.5)
+	.row
+		display: flex
+		align-items: center
+	nav
+		ul
+			margin: auto
+			display: flex
+			justify-content: space-between
+			list-style: none
+			li
+				&:hover
+					border:
+						bottom: 2px solid $accent
+
+.phone
+	ul
+		list-style: none
+		li
+			font-weight: bold
+		
+
+
+
+
+
+
+
+@import "media" // Всегда в конце
