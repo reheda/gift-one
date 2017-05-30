@@ -1,33 +1,34 @@
 @import "fonts"
 @import "libs"
 @import "vars"
+@import "_functions/custom"
 
 *
 	margin: 0
 	padding: 0
 
 *::-webkit-input-placeholder
-	color: #666
+	color: $default-color
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: $default-color
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: $default-color
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: $default-color
 	opacity: 1
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: $default-color
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: $default-color
 
 html, body
 	height: 100%
@@ -41,11 +42,53 @@ body
 	overflow-x: hidden
 	opacity: 1
 
+
+.center
+	text-align: center
+.left
+	text-align: left
+.right
+	text-align: right
+
+section.bg-dark
+	background-color: $dark
+
+.light
+	color: $light
+
 a
 	outline: none
 
+
 ul
 	list-style: none
+
+
+section
+	background-color: $light-white
+
+h3
+	text-transform: uppercase
+	font-size: em(24px)
+	text-align: center
+	
+	&
+
+h4
+	font-family: $exo2-font
+	font-size: em(24px)
+	text-transform: uppercase
+	padding: em(5px)
+
+h5
+	font-size: em(20px)
+
+hr
+	width: em(150px)
+	height: 2px
+	margin-top: em(5px)
+	background-color: $accent
+	border: 0
 
 
 .img-responsive
@@ -53,8 +96,9 @@ ul
 	max-width: 100%
 	height: auto
 
+
 %logo-base
-	font-size: 30px
+	font-size: em(30px)
 	font-weight: bold
 	font-family: $exo2-font
 	color: $light
@@ -66,6 +110,7 @@ ul
 		@extend %logo-base
 		color: $accent
 
+
 header
 	background-image: url("../img/header-bg.jpg")
 	box-shadow: inset 5000px 0 0 0 rgba(0, 0, 0, 0.58)
@@ -75,53 +120,66 @@ header
 	color: $light
 	padding: 
 		top: 50px	
+
 	.header-heading
 		display: flex
 		align-items: center
+
 	nav
-		font-size: 14px
+		font-size: em(14px)
+
 		ul
 			margin: auto
 			display: flex
 			justify-content: space-around
+
 			a
 				color: $light
 				text-decoration: none
+
 				&:hover, &:visited, &:link, &:active
 					color: $light
 					text-decoration: none
+
 			li
 				padding-bottom: 2px
+
 				&:hover, &.active
 					padding-bottom: 0
 					border-bottom: 2px solid $accent
+
 	.header-content
-		// margin: auto 0
-		// padding: 8%
 		color: $light
-		font-size: 14px
+		font-size: em(14px)
 		letter-spacing: 0.06em
+
 		h1
-			font-size: 36px
+			font-size: em(36px)
 			font-weight: normal
 			line-height: 1.3
+
 		.button
-			margin-top: 50px
+			margin-top: em(50px)
 			padding:
-				right: 70px
-				left: 70px
+				right: em(75px)
+				left: em(75px)
+
 		i
-			padding-right: 5px
+			padding-right: em(5px)
+
 		ul
 			color: $grey
 			line-height: 1.8
+
 	.header-img-wrapper
 		text-align: center
+
 		&::before
 			content: ""
 			display: inline-block
 			height: 100%
 			vertical-align: middle
+
 		img
 			vertical-align: middle
 
@@ -130,36 +188,40 @@ header
 	h1
 		margin-top: 0
 
+
 .button
 	border: 0
 	display: inline-block
 	background-color: $accent
 	color: #fff
 	text-decoration: none
-	padding: 13px 34px
-	letter-spacing: 0.06em
+	padding: em(13px) em(34px)
+	letter-spacing: 0.1em
 	text-transform: uppercase
-	box-shadow: 0 4px 0 #0E9C4B
+	box-shadow: 0 4px 0 $accent-dark
 	border-radius: 3px
 	transition: all 0.15s ease
+
+	&:hover, &:active, &:visited, &:link
+		color: #fff
+		text-decoration: none
+
 	&:hover
-		color: #fff
 		background-color: #18cb65
-		text-decoration: none
+
 	&:active
-		color: #fff
 		background-color: #0E9C4B
-		text-decoration: none
 		transform: translateY(2px)
-	&:visited, &:link
-		color: #fff
-		text-decoration: none
+
 
 .phone
 	text-align: right
 	letter-spacing: 0.06em
+	font-size: em(16px)
+
 	ul
 		font-weight: bold
+
 		img
 			width: 18px
 			margin:
@@ -167,19 +229,149 @@ header
 				right: 2px
 			
 
-
 .callback
 	text-align: right
-	font-size: 11px
+	font-size: em(11px)
 	letter-spacing: 0.06em
+
 	a
 		color: $grey
 		text-decoration: underline
+
 		&:hover
 			color: $grey
 			text-decoration: none
 
 
+.features
+	
+	.feature-bullet
+		text-align: center
+		margin-bottom: em(100px)
+		color: $grey
+
+		i
+			display: block
+			font-size: em(48px)
+			color: $light
+			margin-bottom: em(5px)
+
+		&:hover
+			color: $accent
+			i
+				color: $accent
+
+
+.title
+	margin: em(60px) 0
+	display: flex
+	flex-direction: column
+	align-items: center
+
+
+.all-products
+	display: flex
+	align-items: center
+	justify-content: center
+	padding-bottom: em(80px)
+
+
+.product-block
+	text-align: center
+	border: 5px solid $light-grey
+	background-color: #FFF
+	
+	img
+		margin: 10% 0
+		position: relative
+
+	.price
+		position: absolute
+		top: 60%
+		width: 50%
+		right: 5%
+		font-family: $exo2-font
+		font-weight: bold
+		color: #fff
+		background-color: $dark
+		
+		.current-price
+			font-size: em(35px)
+			vertical-align: top	
+
+		.old-price
+			color: $dark-red
+			text-decoration: line-through
+			font-size: em(20px)
+			vertical-align: text-top
+
+
+	.button
+		color: $default-color
+		background-color: $button-grey
+		box-shadow: 0 4px 0 $button-dark-grey
+		margin: 5% 0
+		width: 90%
+
+	&:hover
+		transition: all 0.15s ease
+		border-color: $accent
+		.button
+			color: #fff
+			background-color: $accent
+			box-shadow: 0 4px 0 $accent-dark
+		
+.guarantee-content
+	padding-bottom: em(70px)
+	color: $grey
+	p
+		padding-bottom: em(60px)
+
+
+.questions-wrapper
+	display: flex
+	align-items: center
+
+	.questions-content
+		padding-bottom: em(40px)
+		p
+			padding-bottom: em(60px)
+
+	.questions-img-wrapper
+		text-align: center
+		padding-bottom: em(70px)
+
+.delivery-wrapper
+	color: $grey
+	display: flex
+	align-items: center
+
+	.delivery-content
+		padding-left: em(10px)
+		padding-bottom: em(40px)
+		p
+			padding-bottom: em(60px)
+
+	.delivery-img-wrapper
+		text-align: center
+		padding-bottom: em(70px)
+
+
+.pagination	
+	i
+		font-size: em(55px)
+
+
+
+.reviews-wrapper
+	padding-bottom: em(140px)
+	display: flex
+	align-items: center	
+
+	.reviews-img-wrapper
+		img
+			border-radius: 50%
+			border: 8px solid $grey
 
 
 

@@ -1,65 +1,77 @@
 @import "vars"
 
+$break-custom: 320px
+$break-extra-small: 480px
+$break-small: 768px
+$break-medium: 992px
+$break-large: 1200px
+
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
+@media only screen and (max-width : $break-large)
 	.header-content
 		padding: 12% 0
 	.phone
-		font-size: 14px
+		font-size: em(14px)
 	.callback
 		font-size: 9px
 	/**/
 
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
+@media only screen and (max-width : $break-medium)
 	/**/
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
+@media only screen and (max-width : $break-small)
 	.header-content
-		padding: 8% 0
+		padding: 6% 0
 	/**/
 
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px)
+@media only screen and (max-width : $break-extra-small)
 	/**/
 
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width : 320px)
+@media only screen and (max-width : $break-custom)
 	/**/
 
 
 /*==========  Mobile First  ==========*/
 
 /* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
+@media only screen and (min-width : $break-custom)
 	/**/
 
 
 /* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
+@media only screen and (min-width : $break-extra-small)
 	/**/
 
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
+@media only screen and (min-width : $break-small)
 	/**/
 
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
+@media only screen and (min-width : $break-medium)
 	/**/
 
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
+@media only screen and (min-width : $break-large)
 	.header-content
 		padding: 12% 0
 	/**/
 
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : $break-large) and (max-height : $break-small)
+	.header-content
+		padding: 6% 0
+	/**/
