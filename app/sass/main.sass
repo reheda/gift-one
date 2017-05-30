@@ -50,8 +50,11 @@ body
 .right
 	text-align: right
 
-section.bg-dark
+section.dark
 	background-color: $dark
+	color: $grey
+	h3, h5
+		color: $light
 
 .light
 	color: $light
@@ -96,18 +99,17 @@ hr
 	max-width: 100%
 	height: auto
 
-
-%logo-base
+.logo
 	font-size: em(30px)
 	font-weight: bold
 	font-family: $exo2-font
 	color: $light
-
-.logo
-	@extend %logo-base
-	
+	a
+		text-decoration: none
+		color: $light
+		&:hover
+			opacity: 0.9
 	&-accent
-		@extend %logo-base
 		color: $accent
 
 
@@ -116,6 +118,7 @@ header
 	box-shadow: inset 5000px 0 0 0 rgba(0, 0, 0, 0.58)
 	background-size: cover
 	background-position: bottom
+	min-height: em(650px)
 	height: 100vh
 	color: $light
 	padding: 
@@ -149,6 +152,8 @@ header
 					border-bottom: 2px solid $accent
 
 	.header-content
+		display: flex
+		align-items: center
 		color: $light
 		font-size: em(14px)
 		letter-spacing: 0.06em
@@ -172,16 +177,16 @@ header
 			line-height: 1.8
 
 	.header-img-wrapper
-		text-align: center
+		// text-align: center
 
-		&::before
-			content: ""
-			display: inline-block
-			height: 100%
-			vertical-align: middle
+		// &::before
+		// 	content: ""
+		// 	display: inline-block
+		// 	height: 100%
+		// 	vertical-align: middle
 
-		img
-			vertical-align: middle
+		// img
+		// 	vertical-align: middle
 
 
 .ishome
@@ -244,11 +249,9 @@ header
 
 
 .features
-	
 	.feature-bullet
 		text-align: center
 		margin-bottom: em(100px)
-		color: $grey
 
 		i
 			display: block
@@ -362,20 +365,105 @@ header
 		font-size: em(55px)
 
 
+.reviews
+	padding-bottom: em(70px)
 
-.reviews-wrapper
-	padding-bottom: em(140px)
-	display: flex
-	align-items: center	
+	.reviews-wrapper
 
-	.reviews-img-wrapper
-		img
-			border-radius: 50%
-			border: 8px solid $grey
+		display: flex
+		align-items: center	
+
+		.reviews-img-wrapper
+			img
+				max-width: 85%
+				border-radius: 50%
+				border: 8px solid $grey
+	.reviews-sign-wrapper
+		padding-top: em(50px)
+		font-weight: bold
 
 
+.contacts
+	padding-bottom: em(70px)
 
+.contacts-wrapper
+	i
+		width: em(10px)
+		color: $accent
+		// padding-right: em(1px)
+		font-size: em(48px)
+		text-align: center
 
+	.name
+		font-weight: bold
+		color: $light
+	
+	.contact-phone-numbers
+		display: inline-block
+
+	.contact-address
+		padding-bottom: em(20px)
+	.contact-phone
+		padding-bottom: em(40px)
+
+form.callback-form
+	background-color: #303946
+	padding: em(24px)
+	.callback-form-title
+		text-transform: uppercase
+		font-size: em(18px)
+		letter-spacing: 0.1em
+		color: $light
+
+	p
+		font-size: em(14px)
+		margin:
+			top: em(10px)
+			bottom: em(15px)
+
+form
+	text-align: center
+	.button
+		margin: 0
+	input, select, textarea
+		color: $default-color
+		border-radius: 2px
+		display: block
+		border: none
+		width: 100%
+		padding: em(9px) em(12px)
+		margin-bottom: em(20px)
+
+footer
+	padding: em(30px) 0
+	background-color: #20252d
+	color: $light
+
+	.footer-heading
+		display: flex
+		align-items: center
+	nav
+		font-size: em(14px)
+
+		ul
+			margin: auto
+			display: flex
+			justify-content: space-around
+
+			a
+				color: $light
+				text-decoration: none
+
+				&:hover, &:visited, &:link, &:active
+					color: $light
+					text-decoration: none
+
+			li
+				padding-bottom: 2px
+
+				&:hover, &.active
+					padding-bottom: 0
+					border-bottom: 2px solid $accent
 
 
 @import "media" // Всегда в конце
