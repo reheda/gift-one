@@ -8,6 +8,7 @@ var gulp           = require('gulp'),
 		rename         = require('gulp-rename'),
 		del            = require('del'),
 		imagemin       = require('gulp-imagemin'),
+		tinypng        = require('gulp-tinypng-compress'),
 		cache          = require('gulp-cache'),
 		autoprefixer   = require('gulp-autoprefixer'),
 		ftp            = require('vinyl-ftp'),
@@ -67,6 +68,14 @@ gulp.task('imagemin', function() {
 	.pipe(cache(imagemin()))
 	.pipe(gulp.dest('dist/img')); 
 });
+
+gulp.task('tinypng', function(){
+	return  gulp.src('app/img/**/*')
+	.pipe(cache(tinypng({
+		key: 'R21DOiE0t6ruKvG0svDDDdJ1cS6Mtnb2'
+	})))
+	.pipe(gulp.dest('dist/img')); 
+})
 
 gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 
