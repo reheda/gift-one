@@ -45,6 +45,17 @@ $break-large: 1200px
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : $break-custom)
+	body
+		font-size: 12px
+
+
+
+	header 
+		.header-content 
+			.button 
+				padding:
+					right: em(30px) 
+					left: em(30px)
 	/**/
 
 
@@ -55,18 +66,26 @@ $break-large: 1200px
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : $break-small)
-	/**/
+	body
+		font-size: 16px
+		/**/
 
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : $break-medium)
+	body
+		font-size: 16px
+
 	/**/
 
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : $break-large)
+	body
+		font-size: 16px
 	.header-content
 		padding: 12% 0
+
 	/**/
 
 
@@ -74,4 +93,5 @@ $break-large: 1200px
 @media only screen and (min-width : $break-large) and (max-height : $break-small)
 	.header-content
 		padding: 3% 0
+
 	/**/

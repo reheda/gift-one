@@ -195,6 +195,7 @@ header
 
 
 .button
+	text-align: center
 	border: 0
 	display: inline-block
 	background-color: $accent
@@ -273,10 +274,9 @@ header
 
 
 .all-products
-	display: flex
-	align-items: center
-	justify-content: center
-	padding-bottom: em(80px)
+	position: relative
+	padding: 0 em(50px)
+	margin-bottom: em(80px)
 
 
 .product-block
@@ -465,5 +465,21 @@ footer
 					padding-bottom: 0
 					border-bottom: 2px solid $accent
 
+.owl-nav
+	position: absolute
+	width: 100%
+	top: 50%
+	left: 0
+	div
+		color: $grey
+		&:hover
+			color: $dark
+		font-size: em(55px)
+		position: absolute
+		line-height: em(0px)
+		left: 0
+		&.owl-next
+			left: auto
+			right: 0
 
 @import "media" // Всегда в конце
