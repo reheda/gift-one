@@ -323,12 +323,17 @@ header
 			color: #fff
 			background-color: $accent
 			box-shadow: 0 4px 0 $accent-dark
-		
-.guarantee-content
-	padding-bottom: em(70px)
-	color: $grey
-	p
-		padding-bottom: em(60px)
+
+.guarantee
+
+	.guarantee-content
+		padding-bottom: em(70px)
+		color: $grey
+		p
+			padding-bottom: em(60px)
+	.guarantee-img-wrapper
+		margin: auto
+		padding-bottom: em(30px)
 
 
 .questions-wrapper
@@ -385,6 +390,8 @@ header
 
 .contacts
 	padding-bottom: em(70px)
+	.map
+		padding-bottom: em(40px)
 
 .contacts-wrapper
 	i
@@ -477,9 +484,10 @@ footer
 		font-size: em(55px)
 		position: absolute
 		line-height: em(0px)
-		left: 0
+		&.owl-prev
+			left: 5px
 		&.owl-next
 			left: auto
-			right: 0
+			right: 5px
 
 @import "media" // Всегда в конце
