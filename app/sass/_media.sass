@@ -21,11 +21,16 @@ $break-large: 1200px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : $break-medium)
+	.phone
+		padding-right: em(50px)
 	/**/
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : $break-small)
+	.phone
+		padding-right: em(60px)
+		
 	.header-content
 		padding: 6% 0
 	/**/
@@ -33,6 +38,9 @@ $break-large: 1200px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : $break-extra-small)
+	.logo
+		font-size: em(26px)
+
 	/**/
 
 
@@ -120,9 +128,14 @@ $break-large: 1200px
 	/**/
 
 
-/* Large Devices, Wide Screens */
+/* CUSTOM Large Devices, Wide Screens */
 @media only screen and (min-width : $break-large) and (max-height : $break-small)
 	.header-content
 		padding: 3% 0
+	/**/
 
+/* CUSTOM Large Devices, Wide Screens */
+@media only screen and (width : $break-medium)
+	.phone
+		font-size: em(10px)
 	/**/

@@ -42,6 +42,10 @@ body
 	overflow-x: hidden
 	opacity: 1
 
+.mobile-menu
+	position: absolute
+	top: 0
+	right: 15px
 
 .center
 	text-align: center
@@ -112,6 +116,32 @@ hr
 	&-accent
 		color: $accent
 
+.hidden-menu
+	margin-top: em(10px)
+	background-color: rgba(0, 0, 0, 0.5)
+	display: none
+	ul
+		display: block
+		text-align: center
+		
+		// a
+		// 	color: $light
+		// 	text-decoration: none
+
+		// 	&:hover, &:visited, &:link, &:active
+		// 		color: $light
+		// 		text-decoration: none
+
+		li
+			// padding-bottom: 0
+			padding: 10px 0
+
+			&:hover, &.active
+				// color: #000
+				border-bottom: 0
+				padding: 10px 0	
+				background-color: $accent
+	
 
 header
 	background-image: url("../img/header-bg.jpg")
@@ -229,7 +259,7 @@ header
 		font-weight: bold
 
 		img
-			width: 18px
+			width: em(18px)
 			margin:
 				top: -3px
 				right: 2px
@@ -436,7 +466,7 @@ form
 	text-align: center
 	.button
 		margin: 0
-	input, select, textarea
+	input, select, textarea, button
 		color: $default-color
 		border-radius: 2px
 		display: block
@@ -493,5 +523,117 @@ footer
 		&.owl-next
 			left: auto
 			right: 5px
+
+#callback-form-popup
+	max-width: 380px
+	margin: auto
+	color: $grey
+	box-shadow: rgba(0,0,0,.2) 0 0 20px
+	position: relative
+	overflow: hidden
+
+	.success
+		font-size: em(24px)
+		color: #fff
+		background-color: $dark
+		position: absolute
+		z-index: 1
+		left: 0
+		top: -100%
+		width: 100%
+		height: 100%
+		display: flex
+		opacity: 0
+		+mt(.5s)
+		p
+			margin: auto
+		&.active
+			opacity: 1
+			top: 0
+	
+.mfp-close-btn-in
+	.mfp-close
+		color: $button-dark-grey
+
+
+
+
+
+//====== Zoom effect ======
+.mfp-zoom-in
+	.mfp-with-anim
+		opacity: 0
+		transition: all 0.2s ease-in-out
+		transform: scale(0.8)
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-with-anim
+			transform: scale(0.8)
+			opacity: 0
+		&.mfp-bg
+			opacity: 0
+
+
+// ====== 3d unfold ======
+.mfp-3d-unfold
+	.mfp-content
+		perspective: 2000px
+	.mfp-with-anim
+		opacity: 0
+		transition: all 0.3s ease-in-out
+		transform-style: preserve-3d
+		transform: rotateY(-60deg)
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.5s
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			transform: rotateY(0deg)
+		&.mfp-bg
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-with-anim
+			transform: rotateY(60deg)
+			opacity: 0
+		&.mfp-bg
+			opacity: 0
+
+
+/*--------------------
+ *     Back top top
+ *---------------------*/
+
+.back-to-top
+  background: none
+  margin: 0
+  position: fixed
+  bottom: em(10px)
+  right: em(10px)
+  width: em(60px)
+  height: em(60px)
+  z-index: 100
+  display: none
+  text-decoration: none
+  color: $accent
+  &:hover
+  	color: $accent-dark
+  i
+    font-size: em(60px)
+
+// blur when popup (it's very slow)
+// *
+// 	transition: filter .25s ease
+// .mfp-wrap ~ * 
+// 	filter: blur(5px)
+
 
 @import "media" // Всегда в конце
