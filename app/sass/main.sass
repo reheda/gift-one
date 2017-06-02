@@ -537,19 +537,17 @@ footer
 		color: #fff
 		background-color: $dark
 		position: absolute
-		z-index: 1
+		top: 0
+		right: 0
 		left: 0
-		top: -100%
-		width: 100%
-		height: 100%
-		display: flex
-		opacity: 0
-		+mt(.5s)
+		bottom: 0
+		text-transform: uppercase
+		z-index: 10	
+		display: none
 		p
 			margin: auto
 		&.active
-			opacity: 1
-			top: 0
+			// top: 0
 	
 .mfp-close-btn-in
 	.mfp-close

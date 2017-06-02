@@ -1,20 +1,31 @@
 $(document).ready(function() {
 
 	//E-mail Ajax Send
-	$("form").submit(function() { //Change
+	$("#callback-form-popup").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
 			type: "POST",
 			url: "mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-			$("#callback-form-popup .success").addClass(".active");
+			$(th).find(".success").addClass(".active").css('display', 'flex').hide().fadeIn();
 			setTimeout(function() {
 				// Done Functions
-				$("#callback-form-popup .success").removeClass(".active");
+				$(th).find(".success").removeClass(".active").fadeOut();
 				th.trigger("reset");
 				$.magnificPopup.close();
 			}, 3000);
+		}).fail(function(){
+			$(th).find(".success").addClass(".active").css({
+				'font-weight': 'bold',
+				'color': '#D24D57',
+				'display': 'flex'
+			}).find('p').html('Не удается отправить!<br><br>Попробуйте позже или обратитесь по указанному номеру на сайте').hide().fadeIn();
+			setTimeout(function() {
+				$(th).find(".success").removeClass(".active").fadeOut();
+				// th.trigger("reset");
+				$.magnificPopup.close();
+			}, 5000);
 		});
 		return false;
 	});
