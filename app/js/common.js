@@ -70,7 +70,7 @@ $(function() {
 				if($(window).width() < 700) {
 					this.st.focus = false;
 				} else {
-					this.st.focus = '#name';
+					this.st.focus = '#client-name';
 				}
 			}
 		}
