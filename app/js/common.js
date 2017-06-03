@@ -2,6 +2,17 @@ $(function() {
 
 	// Custom JS
 
+
+	//scroll to anchor
+	function scrollToAnchor(el){
+		var aTag = $("[id='"+ el.data('link').replace('#','') +"']");
+		$('html,body').animate({scrollTop: aTag.offset().top},'slow');
+	}
+	$("a[data-link]").click(function() {
+	   scrollToAnchor($(this));
+	});
+
+
 	//image lazy load
 	$("img.lazy").lazyload({
     // threshold : 200
@@ -65,12 +76,14 @@ $(function() {
 		}
 	});
 
-	$('a[href="#callback-form-popup"]').click(function(){
+	//link with href starts with '#callback-form-'
+	$('a[href^="#callback-form-"]').click(function(){
+		var th = $(this);
 		var dataForm = $(this).data('form');
 		var dataText = $(this).data('text');
-		$('#callback-form-popup .callback-form-title').text(dataText);
+		th.find('.callback-form-title').text(dataText);
 
-		$('#callback-form-popup [name="admin-data-form"]').val(dataForm);
+		th.find('[name="admin-data-form"]').val(dataForm);
 
 	});
 

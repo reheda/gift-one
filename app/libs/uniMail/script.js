@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	//E-mail Ajax Send
-	$("#callback-form-popup").submit(function() { //Change
+	$("#callback-form-popup, #callback-form-contacts").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
 			type: "POST",
@@ -9,6 +9,11 @@ $(document).ready(function() {
 			data: th.serialize()
 		}).done(function() {
 			$(th).find(".success").addClass(".active").css('display', 'flex').hide().fadeIn();
+			$(th).find(".success").addClass(".active").css({
+				'font-weight': 'bold',
+				'color': '#fff',
+				'display': 'flex'
+			}).find('p').html('Спасибо за заявку!').hide().fadeIn();
 			setTimeout(function() {
 				// Done Functions
 				$(th).find(".success").removeClass(".active").fadeOut();
