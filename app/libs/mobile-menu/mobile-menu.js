@@ -1,5 +1,11 @@
-$(".mobile-menu").click(function() {
+$("header .mobile-menu").click(function() {
 	$(this).toggleClass("on");
-	$(".main-menu").slideToggle();
+	$("header .main-menu").slideToggle();
+	return false;
+});
+
+$("footer .mobile-menu").click(function() {
+	$(this).toggleClass("on");
+	$("footer .main-menu").slideToggle();
 	return false;
 });

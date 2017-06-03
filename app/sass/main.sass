@@ -325,7 +325,7 @@ header
 	text-align: center
 	border: 5px solid $light-grey
 	background-color: #FFF
-	
+	+mt(.3s)
 	img
 		margin: 10% 0
 		position: relative
@@ -358,13 +358,19 @@ header
 		margin: 5% 0
 		width: 90%
 
+
 	&:hover
-		transition: all 0.15s ease
 		border-color: $accent
+		.product-block-img-wrapper
+			transform: scale(1.1)
+
 		.button
 			color: #fff
 			background-color: $accent
 			box-shadow: 0 4px 0 $accent-dark
+
+.product-block-img-wrapper
+	+mt(.4s)
 
 .guarantee
 
@@ -423,11 +429,17 @@ header
 	.reviews-wrapper
 		.reviews-img-wrapper
 			img
+				+mt(0.5s)
 				margin: auto
 				margin-bottom: em(20px)
 				max-width: 30%
 				border-radius: 50%
 				border: 8px solid $grey
+			&:hover
+				img 
+					border: 8px solid $button-dark-grey
+
+
 
 	.reviews-sign-wrapper
 		padding-top: em(50px)
