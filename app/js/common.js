@@ -2,10 +2,15 @@ $(function() {
 
 	// Custom JS
 
-
+	//image lazy load
+	$("img.lazy").lazyload({
+    // threshold : 200
+    // skip_invisible : true
+	});
 
 	// Products slider
 	$('.all-products').owlCarousel({
+		lazyLoad: true,
 		margin: 20,
 		nav: true,
 		navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
@@ -31,6 +36,7 @@ $(function() {
 
 	// all reviews slider
 	$('.all-reviews').owlCarousel({
+		lazyLoad: true,
 		margin: 20,
 		nav: true,
 		navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
@@ -106,5 +112,5 @@ $(function() {
 	});
 
 
-
+ $('.preloader-image').fadeOut(); //in the end
 });
