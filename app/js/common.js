@@ -81,8 +81,8 @@ $(function() {
 		var th = $(this);
 		var dataForm = $(this).data('form');
 		var dataText = $(this).data('text');
-		th.find('.callback-form-title').text(dataText);
-		th.find('[name="admin-data-form"]').val(dataForm);
+		$('#callback-form-popup .callback-form-title').text(dataText);
+		$('#callback-form-popup [name="admin-data-form"]').val(dataForm);
 	});
 
 
