@@ -9,14 +9,14 @@ $(function() {
 		$('html,body').animate({scrollTop: aTag.offset().top},'slow');
 	}
 	$("a[data-link]").click(function() {
-	   scrollToAnchor($(this));
+		scrollToAnchor($(this));
 	});
 
 
 	//image lazy load
 	$("img.lazy").lazyload({
-    // threshold : 200
-    // skip_invisible : true
+		// threshold : 200
+		// skip_invisible : true
 	});
 
 	// Products slider
@@ -82,10 +82,9 @@ $(function() {
 		var dataForm = $(this).data('form');
 		var dataText = $(this).data('text');
 		th.find('.callback-form-title').text(dataText);
-
 		th.find('[name="admin-data-form"]').val(dataForm);
-
 	});
+
 
 	//mobile menu slide
 	var initialHeaderMinHeight = $('header').css('min-height');
@@ -98,9 +97,9 @@ $(function() {
 
 	//hreader set min height based on mobile menu
 	$('header .mobile-menu').click(function(){
-			$('header').css({	
-				'min-height': '75em'
-			});
+		$('header').css({	
+			'min-height': '75em'
+		});
 	});
 
 

@@ -3,6 +3,18 @@ $(document).ready(function() {
 	//E-mail Ajax Send
 	$("#callback-form-popup, #callback-form-contacts").submit(function() { //Change
 		var th = $(this);
+		var loadingImg = th.find('.loading');
+		$(document).ajaxStart(function () {
+			th.find('input').attr('readonly', 'readonly');
+			th.find('textarea').attr('readonly', 'readonly');
+			th.find('button').hide();
+			loadingImg.show();
+		}).ajaxStop(function () {
+			th.find('input').removeAttr('readonly');
+			th.find('textarea').removeAttr('readonly');
+			loadingImg.hide();
+			th.find('button').show();
+		});
 		$.ajax({
 			type: "POST",
 			url: "mail.php", //Change
